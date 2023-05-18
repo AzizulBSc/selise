@@ -21,7 +21,9 @@ submitbtn.addEventListener("click", function() {
     const urlInput = document.getElementById("url");
     var categoryInput = document.getElementById("category");
     var categoryInput2 = document.getElementById("categorynew");
-    if(categoryInput2.value!=null){
+    console.log("drop"+categoryInput.value);
+    console.log(categoryInput2.value);
+    if(categoryInput2.value){
         var categoryval = categoryInput2.value;
     }
     else {
