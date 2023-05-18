@@ -19,13 +19,20 @@ submitbtn.addEventListener("click", function() {
     };
     const titleInput = document.getElementById("title");
     const urlInput = document.getElementById("url");
-    const categoryInput = document.getElementById("category");
+    var categoryInput = document.getElementById("category");
+    var categoryInput2 = document.getElementById("categorynew");
+    if(categoryInput2.value!=null){
+        var categoryval = categoryInput2.value;
+    }
+    else {
+        var categoryval = categoryInput.value;
+    }
 
     const formData = {
         id: new Date().getTime(), // Generate a unique ID using the current timestamp
         title: titleInput.value,
         url: urlInput.value,
-        category: categoryInput.value
+        category:categoryval
     };
 
     let storedData = localStorage.getItem("bookMark");
@@ -120,7 +127,42 @@ function getItemById(itemId) {
 }
 
 
+function handleaddfield(){
 
+    const form = document.getElementById("myform");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
+    var cat = document.getElementById('newcat')
+    cat.style.display = "block";
+    const selectDropdown = document.getElementById('category');
+    selectDropdown.disabled = true;
+}
+
+
+
+const categorySelect = document.getElementById("category");
+
+// Retrieve bookmark data from local storage
+const bookmarkData = JSON.parse(localStorage.getItem("bookMark"));
+
+// Create an array to store unique categories
+const categories = [];
+
+// Extract unique categories from bookmark data
+bookmarkData.forEach((bookmark) => {
+    if (!categories.includes(bookmark.category)) {
+        categories.push(bookmark.category);
+    }
+});
+
+// Populate the categories into the select input
+categories.forEach((category) => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    categorySelect.appendChild(option);
+});
 
 
 
@@ -139,4 +181,3 @@ function urlCheck(){
         return pattern.test(urlvalue);
     }
 }
-

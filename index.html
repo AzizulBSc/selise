@@ -41,7 +41,12 @@
            <input  name="url" placeholder="Url" type="text" id="url">
             </div>
                 <div class="input-group">
-                <input  name="category" placeholder="Category" type="text" id="category"> <button>+</button>
+                    <select name="category"  id="category">
+                    </select>
+                    <button onclick="handleaddfield()">+</button>
+               </div>
+            <div class="input-group" id="newcat" style="display: none">
+                <input name="categorynew"  placeholder="Category" type="text" id="categorynew">
             </div>
         </form>
         <footer>
