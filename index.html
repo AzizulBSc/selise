@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selise Assessment</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="flex">
+        <h2 style="margin: 0">Bookmark Manager</h2>
+        <button id="openModalButton"  style="margin-left: 120px;">Add BookMark</button>
+    </div>
+   <div style="display: flex;align-items: center">
+    <div style="padding-top: 20px" id="allBookMark">
+
+   </div>
+<!--       // show bookmark details box-->
+       <div id="bookmark-details" style="padding-left: 30px;padding-top:20px;display: none ">
+           <div class="border" >
+               <ul>
+                   <p id="dtitle"></p>
+                   <p id="durl"></p>
+                   <p id="dcat"></p>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <h2>Add Book mark</h2>
+        <form id="myform">
+            <div class="input-group">
+           <input  name="title" placeholder="Title" type="text" id="title" maxlength="30" required>
+            </div>
+            <div class="input-group">
+           <input  name="url" placeholder="Url" type="text" id="url">
+            </div>
+                <div class="input-group">
+                <input  name="category" placeholder="Category" type="text" id="category"> <button>+</button>
+            </div>
+        </form>
+        <footer>
+            <button class="close">Cancel</button>
+            <button class="save" id="submit" type="submit">Save</button>
+
+        </footer>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
